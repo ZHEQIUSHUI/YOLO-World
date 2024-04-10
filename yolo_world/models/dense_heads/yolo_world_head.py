@@ -36,7 +36,7 @@ class ContrastiveHead(BaseModule):
     def __init__(self,
                  embed_dims: int,
                  init_cfg: OptConfigType = None,
-                 use_einsum: bool = True) -> None:
+                 use_einsum: bool = False) -> None:
 
         super().__init__(init_cfg=init_cfg)
 
@@ -78,7 +78,7 @@ class BNContrastiveHead(BaseModule):
                  embed_dims: int,
                  norm_cfg: ConfigDict,
                  init_cfg: OptConfigType = None,
-                 use_einsum: bool = True) -> None:
+                 use_einsum: bool = False) -> None:
 
         super().__init__(init_cfg=init_cfg)
         self.norm = build_norm_layer(norm_cfg, embed_dims)[1]
@@ -121,7 +121,7 @@ class YOLOWorldHeadModule(YOLOv8HeadModule):
                  *args,
                  embed_dims: int,
                  use_bn_head: bool = False,
-                 use_einsum: bool = True,
+                 use_einsum: bool = False,
                  freeze_all: bool = False,
                  **kwargs) -> None:
         self.embed_dims = embed_dims

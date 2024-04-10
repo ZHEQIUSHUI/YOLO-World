@@ -30,7 +30,7 @@ class MaxSigmoidAttnBlock(BaseModule):
                                              momentum=0.03,
                                              eps=0.001),
                  init_cfg: OptMultiConfig = None,
-                 use_einsum: bool = True) -> None:
+                 use_einsum: bool = False) -> None:
         super().__init__(init_cfg=init_cfg)
         conv = DepthwiseSeparableConvModule if use_depthwise else ConvModule
 
@@ -114,7 +114,7 @@ class MaxSigmoidCSPLayerWithTwoConv(CSPLayerWithTwoConv):
             norm_cfg: ConfigType = dict(type='BN', momentum=0.03, eps=0.001),
             act_cfg: ConfigType = dict(type='SiLU', inplace=True),
             init_cfg: OptMultiConfig = None,
-            use_einsum: bool = True) -> None:
+            use_einsum: bool = False) -> None:
         super().__init__(in_channels=in_channels,
                          out_channels=out_channels,
                          expand_ratio=expand_ratio,

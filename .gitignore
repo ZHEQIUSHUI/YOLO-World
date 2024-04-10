@@ -124,4 +124,5 @@ work_dirs
 
 # venus
 venus_run.sh
+work_dir
 

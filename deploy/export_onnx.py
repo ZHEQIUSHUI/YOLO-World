@@ -20,6 +20,8 @@ warnings.filterwarnings(action='ignore', category=UserWarning)
 warnings.filterwarnings(action='ignore', category=FutureWarning)
 warnings.filterwarnings(action='ignore', category=ResourceWarning)
 
+import sys
+sys.path.append(os.getcwd())
 
 def parse_args():
     parser = argparse.ArgumentParser()
